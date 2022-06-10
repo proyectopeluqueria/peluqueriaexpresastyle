@@ -1,0 +1,238 @@
+
+
+
+/* variables */
+:root {
+  --primario: rgb(2, 62, 151);/*#024897*/
+  --oscuro: #1d1b31;/*#024897*/
+  --verde-color : rgb(13, 141, 45);
+  --verde-color2 : rgba(42, 238, 75, 0.87);
+}
+/* Fin variables */
+
+
+
+body, html {
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  overflow: auto;
+}
+
+body {
+  background: linear-gradient(rgba(34, 51, 113, 0.429), rgba(221, 221, 16, 0.486)), url("../src/img/fondo.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+
+.fondo{
+    background: linear-gradient(rgba(34, 51, 113, 0.429), rgba(221, 221, 16, 0.486)), url("../src/img/expressa style2.jpg");
+    height: 97vh;
+    background-size: cover;
+    background-position: center;
+}
+
+
+label, p {
+  color: black;
+}
+
+.icon-lg{
+  font-size: 25px;
+}
+
+.show{
+  color : white !important;
+}
+
+#titulo{
+  color : black !important;
+}
+
+.form-label{
+  color : black !important;
+  font-weight: bold;
+}
+
+.modal-title{
+  color : black !important;
+  font-weight: bold;
+}
+
+.font-weight-bold{
+  color : black !important;
+  font-weight: bold;
+}
+
+
+.dropdown-item{
+  color: rgb(218, 214, 214) !important;
+  color : var(--oscuro) !important;
+}
+
+.dropdown-item:hover{
+  color : white !important;
+  background : var(--oscuro)  !important;
+}
+
+
+.dropdown-toggle{
+  color: rgb(218, 214, 214) !important;
+}
+
+.dropdown-toggle:hover{
+  color : white !important;
+}
+
+.nav-link{
+  color: rgb(218, 214, 214);
+  font-size: 20px;
+}
+
+.nav-link:hover{
+  color: rgb(8, 8, 8);
+  font-size: 20px;
+}
+
+
+.img-200{
+  height: 180px;
+  margin: 0;
+  padding: 0;
+}
+
+
+.texto_total{
+  font-size: 32px;
+  font-weight: bold;
+  text-align: right;
+}
+
+
+.font-weight-bold{
+  font-weight: bold;
+}
+
+
+.titulo{
+  text-align: center;
+  color: black;
+}
+
+.fa-car-alt{
+  font-size: 24px !important;
+  color: blue !important;
+}
+
+
+.bg-azulmarino{
+  background-color: #ffffff00 !important;
+}
+
+.btn_nuevo{
+  background-color: rgba(0, 47, 255, 0.836);
+  color: white;
+  width: 150px;
+  margin-top: 2px;
+}
+
+
+.btn_nuevo:hover{
+  background-color: white;
+  color: rgba(0, 47, 255, 0.836);
+}
+
+
+#btn_eliminar{
+  background-color: red;
+  color: white;
+  width: 85px;
+  margin-top: 2px;
+}
+
+
+#btn_eliminar:hover{
+  background-color: white;
+  color: red;
+}
+
+#btn_editar{
+  background-color: rgb(23, 235, 69);
+  color: white;
+  border: rgb(23, 235, 69) 1px solid;
+  width: 85px;
+  margin-top: 2px;
+}
+
+#btn_editar:hover{
+  background-color: white;
+  color: rgb(23, 235, 69);
+}
+
+.btn_secundario{
+  background-color: rgb(23, 235, 235);
+  color: white;
+  border: rgb(23, 235, 235) 1px solid;
+  width: 85px;
+  margin-top: 2px;
+}
+
+.btn_secundario:hover{
+  background-color: white;
+  color: rgb(23, 235, 235);
+}
+
+#btn_nuevo{
+  background-color: rgb(23, 108, 235);
+  color: white;
+  border: rgb(23, 108, 235) 1px solid;
+}
+
+#btn_nuevo:hover{
+  background-color: white;
+  color: rgb(23, 108, 235);
+}
+
+
+
+
+
+/* ESTILOS DE LA PÁGINA, SIDEBAR Y DASHBOARD */
+
+.borde{
+  border: #848085 3px solid;
+}
+
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+.titulo-total{
+  padding-top: 5px;
+  font-size: 30px;
+  text-align: right;
+  font-weight: bold;
+}
+
+.verde{
+  font-weight: bold;
+  color: green;
+}
+
+.rojo{
+  font-weight: bold;
+  color: red;
+}
+
+.amarillo{
+  font-weight: bold;
+  color: rgb(207, 137, 7);
+}
+
+
+

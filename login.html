@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Login</title>
+    <link href="./src/img/entrar.png" rel="shortcut icon" type="image/x-icon" />
+      <!-- Color para la barra de direccion del navegador (para dispositivos moviles) -->
+      <meta name="theme-color" content="black">
+      <!-- Oculta la barra de direccion al crear un acceso directo -->
+      <meta name="apple-mobile-web-app-capable" content="yes">
+      <!-- Meta Tag responsive -->
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="./css/alertify.min.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/bootstrap-icons.css">
+    <link rel="stylesheet" href="./css/style.css">
+  </head>
+  <body class="fondo">
+    <div class="container mt-5 pt-5">
+      <div class="row">
+        <div class="col-md-6 mx-auto">
+            <div class="card">
+              <div class="mx-auto">                
+                <img src="./src/img/login.png" class="img-200" alt="">
+              </div>
+              <form class="" action="index.html" method="get">
+              <div class="card-body">
+                  <div class="row">
+                    <div class="col-md-6 mx-auto">
+                      <h4>¡BIENVENIDO/A!</h4>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-6 mx-auto">
+                      <h6>POR FAVOR IDENTIFICATE</h6>
+                    </div>
+                  </div>
+
+                  <div class="mb-3">  
+                    <i class="bi bi-person-fill icon-lg"></i>
+                    <label for="exampleFormControlInput1" class="form-label">USUARIO</label>
+                    <input type="text" required class="form-control" id="user" placeholder="INGRESE SU USUARIO" autocomplete="off">
+                  </div>
+                  <div class="mb-3">
+                    <i class="bi bi-lock-fill icon-lg"></i>
+                    <label for="exampleFormControlTextarea1" class="form-label">CONTRASEÑA</label>
+                    <input type="password" required class="form-control" id="pass" placeholder="INGRESE SU CONTRASEÑA" autocomplete="off">
+                  </div>
+              </div>
+              <div class="card-footer">
+                <div class="d-grid gap-2">
+                  <button type="button" class="btn btn-bloc btn-primary" id="enviar"> <i class="bi bi-key icon-lg"></i> LOGIN</button>
+                </div>
+              </div>
+            </form>
+            </div>
+        </div>
+      </div>
+    </div>
+
+
+
+    <script type="text/javascript" src="./js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="./js/sweetalert2.all.min.js"> </script>
+    <script type="text/javascript" src="./js/alertify.min.js"> </script>
+    <script type="text/javascript" src="./js/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="./js/funciones.js"></script>
+    <script type="text/javascript" src="./js/registros.js"></script>
+    <script type="text/javascript" src="./js/login.js"></script>
+
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+    <script>
+ 
+        $(function () {
+            function isIE() {
+                if (!!window.ActiveXObject || "ActiveXObject" in window) {
+                    return true;
+                } else {
+                    return false;
+                }
+            }
+            if (isIE()) {
+                $('#loginPass').css({ 'height': '38px', 'fontSize': '0', 'padding': '0', 'width': '75%' })
+            }
+            if (window.navigator.userAgent.indexOf('MSIE 8.0') != -1) {
+                $('#loginPass').css('imeMode', 'disabled')
+            }
+            var flag = true
+            $('#loginPass').on('compositionstart', function (e) {
+                flag = false
+                // Alerta ('Detectar que está ingresando chino, ha sido deshabilitado para su operación, vuelva a ingresar la contraseña') 
+            })
+            $('#loginPass').on('compositionend', function (e) {
+                if (!flag) {
+                    e.target.value = ''
+                    $('#loginPass').val('')
+                    $('.password_text').css('paddingRight', '0px')
+                }
+                flag = true;
+            })
+            $('#loginPass').on('input propertychange', function () {
+                setTimeout(function () {
+                    if (flag) {
+                        var password_text = ''
+                        for (var i = 0; i < $('#loginPass').val().length; i++) {
+                            password_text += '<i class="pass_i" style="display:inline-block;width:8px;height:13px;background-image:url(./image/index/pass.png);background-repeat:no-repeat;background-position:center 0;"></i>'
+                        }
+                        $('.password_text').html(password_text)
+                    }
+                }, 0)
+                if ($('#loginPass').val() != '') {
+                    $('.password_text').css('paddingRight', '15px')
+                } else {
+                    $('.password_text').css('paddingRight', '0px')
+                }
+            })
+        })
+ 
+        function set_text_value_position(obj, spos) {
+            var tobj = document.getElementById(obj);
+            if (spos < 0)
+                spos = tobj.value.length;
+                         If (tobj.setselectionrange)/*compatible con Firefox, Google*/
+              {
+                setTimeout(function () {
+                    tobj.setSelectionRange(spos, spos);
+                    tobj.focus();
+                }, 0);
+              } 
+                { (tobj.createtextrange) /* es compatible con IE */
+                var rng = tobj.createTextRange();
+                rng.move('character', spos);
+                rng.select();
+            }
+        }
+      
+    
+        function setInputCursorEnd() {
+            if ($('#loginPass').val() != '') {
+                set_text_value_position('loginPass', -1)
+            }
+        }
+ 
+        function login() {
+            console.log($('#loginPass').val())
+        }
+    </script>
+
+
+    <script type="text/javascript" >
+      
+      
+      if(getCookie('usuario') != ''){
+        window.location.href = "./index.html";
+      }
+
+      
+    </script>
+
+
+  </body>
+</html>
